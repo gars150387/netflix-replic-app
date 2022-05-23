@@ -1,3 +1,5 @@
+@import '../src/common/colors.scss';
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
 
 * {
@@ -12,7 +14,7 @@ a {
 }
 
 body{
-  background-color: $font-primery;
+  background-color: $primery-color;
 }
 
 .container{
