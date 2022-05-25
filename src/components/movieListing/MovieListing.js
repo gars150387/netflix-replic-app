@@ -21,7 +21,7 @@ export const MovieListing = () => {
   )
   ) : (<div className="movies-error"><h3>{movies.error}</h3></div>)
 
-  renderShows = movies.Response === "True" ? (
+  renderShows = shows.Response === "True" ? (
     shows.Search.map((show, index) => {
       console.log('show', show)
       return (
