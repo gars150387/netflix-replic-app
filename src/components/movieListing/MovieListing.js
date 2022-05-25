@@ -1,5 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import Slider from 'react-slick'
+import { Settings } from '../../common/setting'
 import { getAllMovies, getAllShows } from '../../features/movie/movieSlice'
 import { MovieCard } from '../movideCard/MovieCard'
 
@@ -36,13 +38,13 @@ return (
     <div className='movie-list'>
       <h2>Movies</h2>
       <div className='movie-container'>
-        {renderMovies}
+        <Slider {...Settings}>{renderMovies}</Slider>
       </div>
     </div>
     <div className='movie-list'>
       <h2>Shows</h2>
       <div className='movie-container'>
-        {renderShows}
+        <Slider {...Settings}>{renderShows}</Slider>
       </div>
     </div>
   </div>
