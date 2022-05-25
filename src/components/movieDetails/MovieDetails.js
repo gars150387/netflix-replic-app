@@ -1,7 +1,11 @@
-import React,  { useEffect } from 'react'
-import {useParams} from 'react-router'
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAsyncMoviesOrSeries, getMoviesOrSeries } from '../../features/movie/movieSlice'
+import { FaStar, FaThumbsUp, FaFilm, FaCalendarAlt } from 'react-icons/fa'
+import { removeMoviesOrShows } from '../../features/movie/movieSlice'
+
+import './MovieDetails.scss'
 
 
 export const MovieDetails = () => {
@@ -13,26 +17,31 @@ export const MovieDetails = () => {
 
   useEffect(() => {
     dispatch(fetchAsyncMoviesOrSeries(imdbID))
+    return () => {
+      dispatch(removeMoviesOrShows())
+    }
   }, [dispatch, imdbID])
-  
+
   return (
     <div className="movie-section">
+      {Object.keys(data).length === 0 ? (<div>...Loading</div>) : (
+      <>      
       <div className="section-left">
         <div className="movie-title">
-          {data.title}
+          {data.Title}
         </div>
         <div className="movie-rating">
           <span>
-            IMDB rating <i className="fa fa-star" /> : {data.imdbRating}
+            IMDB rating <FaStar className="FaStar" /> : {data.imdbRating}
           </span>
           <span>
-            IMDB votes <i className="fa fa-rhunds-up" /> : {data.imdbVotes}
+            IMDB votes <FaThumbsUp className="FaThumbsUp" /> : {data.imdbVotes}
           </span>
           <span>
-            Run time <i className="fa fa-filmr" /> : {data.Runtime}
+            Run time <FaFilm className="FaFilm" /> : {data.Runtime}
           </span>
           <span>
-            Year <i className="fa fa-calendar" /> : {data.Year}
+            Year <FaCalendarAlt className="FaCalendarAlt" /> : {data.Year}
           </span>
         </div>
         <div className="movie-plot">
@@ -62,8 +71,10 @@ export const MovieDetails = () => {
         </div>
       </div>
       <div className="section-rigth">
-      <img src={data.Poster} alt={data.Title} />
+        <img src={data.Poster} alt={data.Title} />
       </div>
+      </>
+      )}
     </div>
   )
 }

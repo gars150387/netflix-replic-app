@@ -39,7 +39,7 @@ return (
         {renderMovies}
       </div>
     </div>
-    <div className='show-list'>
+    <div className='movie-list'>
       <h2>Shows</h2>
       <div className='movie-container'>
         {renderShows}

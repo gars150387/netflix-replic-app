@@ -44,8 +44,8 @@ const movieSlice = createSlice({
     name: "movies",
     initialState,
     reducers: {
-        addMovies: (state, { payload}) =>{
-            state.movies = payload;
+        removeMoviesOrShows: (state) =>{
+            state.moviesOrSeries = {}
         }
     },
     extraReducers: {
@@ -78,7 +78,7 @@ const movieSlice = createSlice({
 })
 
 
-export const { addMovies } = movieSlice.actions;
+export const { removeMoviesOrShows } = movieSlice.actions;
 export const getAllMovies = (state) => state.movies.movies;
 export const getAllShows = (state) => state.movies.shows;
 export const getMoviesOrSeries = (state) => state.movies.moviesOrSeries;

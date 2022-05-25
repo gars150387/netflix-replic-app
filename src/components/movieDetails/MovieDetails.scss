@@ -1,0 +1,66 @@
+@import '../../common/colors.scss';
+
+.movie-section{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px 0px;
+    color: $font-primery;
+    font-weight: 400;
+}
+
+.movie-rating{
+    padding-left: 3px;
+    margin-top: 20px;
+    color: $font-secondary;
+    display: flex;
+
+    span{
+        margin-right: 20px;
+    }
+}
+
+.movie-title{
+    font-size: 40px;
+    color: $font-primery;
+}
+
+.movie-plot{
+    margin-top: 20px;
+    line-height: 1.8rem;
+    color: $font-primery;
+}
+
+.movie-info > div span:first-child{
+    padding: 10px 0px;
+    color: $font-primery;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.movie-info > div span{
+    color: $font-secondary;
+}
+
+.FaStar{
+    color: #ff9e00;
+}
+
+.FaThumbsUp{
+    color: #fafafa;
+}
+
+.FaFilm{
+    color: rgb(191,213,214);
+}
+
+.FaCalendarAlt{
+    color: peachpuff;
+}
+
+.setction-right{
+    margin-left: 30px;
+}
+
+img img{
+    width: 100vw;
+}
