@@ -49,24 +49,24 @@ export const MovieDetails = () => {
         </div>
         <div className="movie-info">
           <div>
-            <span>Director</span>
-            <span>{data.Director}</span>
+            <span>Director: </span>
+            <span> {data.Director}</span>
           </div>
           <div>
-            <span>Stars</span>
-            <span>{data.Actors}</span>
+            <span>Stars:</span>
+            <span> {data.Actors}</span>
           </div>
           <div>
-            <span>Generes</span>
-            <span>{data.Genres}</span>
+            <span>Genres:</span>
+            <span> {data.Genres}</span>
           </div>
           <div>
-            <span>Languages</span>
-            <span>{data.Language}</span>
+            <span>Languages:</span>
+            <span> {data.Language}</span>
           </div>
           <div>
-            <span>Awards</span>
-            <span>{data.Awards}</span>
+            <span>Awards:</span>
+            <span> {data.Awards}</span>
           </div>
         </div>
       </div>

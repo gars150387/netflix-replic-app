@@ -11,9 +11,15 @@
     font-family: 'Bubblegum Sans', cursive;}
 
 .logo{
-    color: $font-primery;
+    color: $font-primary;
     font-size: 20px;
     font-weight: 600;
+    text-decoration: none;
+}
+
+.logo a{
+    text-decoration: none;
+    color: $font-primary;
 }
 
 .user-image, .user-image img{

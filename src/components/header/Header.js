@@ -20,7 +20,7 @@ export const Header = () => {
     e.preventDefault();
     dispatch(fetchAsyncMovies(searchBar))
     dispatch(fetchAsyncShows(searchBar))
-    searchBar('');
+    setSearchBar('');
   }
   return (
     <div className='header'>
