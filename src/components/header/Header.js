@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Form, Button } from 'react-bootstrap'
+import { useDispatch } from 'react-redux'
 import { FaSearch } from 'react-icons/fa'
+import { fetchAsyncMovies, fetchAsyncShows } from '../../features/movie/movieSlice'
+
 import './Header.scss'
 
 
 export const Header = () => {
+  const dispatch = useDispatch()
 
   const [searchBar, setSearchBar] = useState('')
 
@@ -15,7 +18,9 @@ export const Header = () => {
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    console.log(e)
+    dispatch(fetchAsyncMovies(searchBar))
+    dispatch(fetchAsyncShows(searchBar))
+    searchBar('');
   }
   return (
     <div className='header'>
@@ -23,8 +28,9 @@ export const Header = () => {
         <div className='logo'><Link to="/">Movie App</Link></div>
       
     <div className='search-bar'>
-      <form>
-          <input placeholder='Search Movies or Shows' type="text" onChange={handleInputSearch} name="search" value={ searchBar } />
+      <form onSubmit={ handleSubmit }>
+          <input placeholder='Search Movies or Shows' type="text" onChange={handleInputSearch} 
+          name="search" value={ searchBar } />
           <button type='submit'><FaSearch className='FaSearch'/></button>
       </form>
     </div>

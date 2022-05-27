@@ -9,7 +9,7 @@ export const Home = () => {
 
   const dispatch = useDispatch()
 
-  useEffect(() => {
+  useEffect((searchBar) => {
     dispatch(fetchAsyncMovies())
     dispatch(fetchAsyncShows())
   }, [dispatch])
