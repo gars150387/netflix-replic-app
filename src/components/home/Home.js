@@ -9,9 +9,12 @@ export const Home = () => {
 
   const dispatch = useDispatch()
 
+  const movieStart = 'action'
+  const showStart = 'comedy'
+
   useEffect((searchBar) => {
-    dispatch(fetchAsyncMovies())
-    dispatch(fetchAsyncShows())
+    dispatch(fetchAsyncMovies(movieStart))
+    dispatch(fetchAsyncShows(showStart))
   }, [dispatch])
   
   return (

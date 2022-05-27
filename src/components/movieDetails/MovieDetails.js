@@ -58,7 +58,7 @@ export const MovieDetails = () => {
           </div>
           <div>
             <span>Genres:</span>
-            <span> {data.Genres}</span>
+            <span> {data.Genre}</span>
           </div>
           <div>
             <span>Languages:</span>
